@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block featured_background_color %}{{ featured_post.background_color }}{% endblock featured_background_color %}
+{% block featured_icon %}{{ featured_post.icon.featured_image.full_size }}{% endblock featured_icon %}
+{% block featured_link %}/{{ featured_post.category.slug }}/{{ featured_post.slug }}{% endblock featured_link %}
+{% block featured_title %}{{ featured_post.title }}{% endblock featured_title %}
+{% block featured_tag_title %}{{ featured_post.title }}{% endblock featured_tag_title %}
+{% block featured_category %}{{ featured_post.category.name }}{% endblock featured_category %}
+{% block featured_date %}{{ featured_post.created_at | date }}{% endblock featured_date %}
+
+{% block content %}
+
+    <div class="all-posts">
+        {% for post in posts %}
+            <a href="/{{ post.category.slug }}/{{ post.slug }}" class="mdl-card mdl-shadow--2dp item-post">
+                <div class="mdl-card__title mdl-card--expand">
+                    <figure>
+                        <img src="{{ post.icon.featured_image.full_size }}" alt="{{ post.title }} title">
+                    </figure>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <span class="item-post-category">{{ post.category.name }}</span>
+                    <h2 class="mdl-card__title-text">{{ post.title }}</h2>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+
+{% endblock content %}

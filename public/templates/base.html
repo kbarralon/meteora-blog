@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="/static/app.bundle.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    {% block header %}{% endblock header %}
+
+    <!-- ICONS -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ website }}/assets/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ website }}/assets/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ website }}/assets/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ website }}/assets/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="{{ website }}/assets/icons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ website }}/assets/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ website }}/assets/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ website }}/assets/icons/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="{{ website }}/assets/icons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="{{ website }}/assets/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="{{ website }}/assets/icons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="{{ website }}/assets/icons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="{{ website }}/assets/icons/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Meteora.io"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="{{ website }}/assets/icons/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="{{ website }}/assets/icons/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="{{ website }}/assets/icons/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="{{ website }}/assets/icons/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="{{ website }}/assets/icons/mstile-310x310.png" />
+    <!-- END ICONS -->
+    
+    <script src="https://use.fontawesome.com/59bd094c06.js"></script>
+    <title>Blog de programmation, design, communication et entrepreneuriat</title>
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout">
+
+    <!-- Header -->
+    <header class="mdl-layout__header mdl-layout__header--scroll">
+        <div class="mdl-layout__header-row">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="/" title="Meteora.io">
+                    <svg>
+                        <use xlink:href="/images/logo.svg#logo"></use>
+                    </svg>
+                </a>
+            </div>
+            <!-- End logo -->
+
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+                <a class="mdl-navigation__link" title="L'agence Meteora" href="{{ website }}">L'agence</a>
+                <a class="mdl-navigation__link" title="Nos services" href="{{ website }}/services">Nos services</a>
+                <a class="mdl-navigation__link" title="Contacter l'équipe" href="{{ website }}/contact">Nous contacter</a>
+            </nav>
+        </div>
+    </header>
+    <!-- End header -->
+
+    <!-- Content -->
+    <main class="mdl-layout__content">
+
+        {% block featured_post %}
+        <section class="featured-post"
+                 style="background: {% block featured_background_color %}{% endblock featured_background_color %} url({% block featured_icon %}{% endblock featured_icon %}) no-repeat center bottom;  background-size: 560px 315px; ">
+            <a href="{% block featured_link %}{% endblock featured_link %}"
+               title="{% block featured_tag_title %}{% endblock featured_tag_title %}"
+               class="featured-title">
+                <h1>{% block featured_title %}{% endblock featured_title %}</h1>
+                <span class="featured-info">
+                    <span><i class="material-icons">label</i> {% block featured_category %}{% endblock featured_category %}</span>
+                    <span><i class="material-icons">access_time</i> {% block featured_date %}{% endblock featured_date %}</span>
+                </span>
+            </a>
+        </section>
+        {% endblock featured_post %}
+
+        <!-- Page content -->
+        <div class="page-content {% block full_layout %}{% endblock full_layout %}">
+            {% block content %}{% endblock content %}
+        </div>
+        <!-- End page content -->
+
+        <!-- Footer -->
+        <footer class="mdl-mega-footer">
+            <div class="mdl-mega-footer__middle-section">
+
+                <div class="mdl-mega-footer__drop-down-section">
+                    <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                    <h3 class="mdl-mega-footer__heading">Domaines</h3>
+                    <ul class="mdl-mega-footer__link-list">
+                        <li><a href="{{ website }}">L'agence Meteora.io</a></li>
+                        <li><a href="/">Le blog Meteora.io</a></li>
+                    </ul>
+                </div>
+
+                <div class="mdl-mega-footer__drop-down-section">
+                    <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                    <h3 class="mdl-mega-footer__heading">Nos services</h3>
+                    <ul class="mdl-mega-footer__link-list">
+                        <li><a href="{{ website }}/services/developpement-web-applicatif">Développement web & applicatif</a></li>
+                        <li><a href="{{ website }}/services/identite-visuelle">Identité visuelle</a></li>
+                        <li><a href="{{ website }}/services/animation">Motion design</a></li>
+                        <li><a href="{{ website }}/services/community-management">Community management</a></li>
+                    </ul>
+                </div>
+
+                <div class="mdl-mega-footer__drop-down-section">
+                    <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                    <h3 class="mdl-mega-footer__heading">Notre travail</h3>
+                    <ul class="mdl-mega-footer__link-list">
+                        <li><a href="{{ website }}/notre-methode">Notre méthode</a></li>
+                        <li><a href="{{ website }}/projets">Nos projets</a></li>
+                        <li><a href="{{ website }}/equipe">L'équipe</a></li>
+                    </ul>
+                </div>
+
+                <div class="mdl-mega-footer__drop-down-section">
+                    <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                    <h3 class="mdl-mega-footer__heading">Liens</h3>
+                    <ul class="mdl-mega-footer__link-list">
+                        <li><a href="{{ website }}/contact">Nous contacter</a></li>
+                        <li><a href="{{ website }}/mentions-legales">Mentions légales</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="mdl-mega-footer__bottom-section">
+                <ul class="mdl-mega-footer__link-list social-footer">
+                    <li><a href="https://www.facebook.com/404meteors/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="https://twitter.com/404meteors" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="https://plus.google.com/u/0/115840684662165816236" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+
+        </footer>
+        <!-- End footer -->
+    </main>
+    <!-- End content -->
+
+
+</div>
+
+
+
+<script src="/static/app.bundle.js"></script>
+</body>
+</html>
