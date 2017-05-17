@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="/static/app.bundle.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://use.fontawesome.com/59bd094c06.js"></script>
 
     {% block header %}{% endblock header %}
 
@@ -31,11 +32,12 @@
     <meta name="msapplication-square310x310logo" content="{{ website }}/assets/icons/mstile-310x310.png" />
     <!-- END ICONS -->
     
-    <script src="https://use.fontawesome.com/59bd094c06.js"></script>
-    <title>Blog de programmation, design, communication et entrepreneuriat</title>
+    <title>{% block title %}Blog de programmation, design, communication et entrepreneuriat{% endblock title %}</title>
+    <meta name="author" content="Meteora.io">
+    <meta name="description" content="{% block metadescription %}Le blog d'information du studio digital Meteora. Restez à jour sur la programmation, le design, la communication et l'entrepreneuriat.{% endblock metadescription %}">
 </head>
 <body>
-<div class="mdl-layout mdl-js-layout">
+<div class="mdl-layout">
 
     <!-- Header -->
     <header class="mdl-layout__header mdl-layout__header--scroll">
@@ -68,21 +70,24 @@
         {% block featured_post %}
         <section class="featured-post"
                  style="background: {% block featured_background_color %}{% endblock featured_background_color %} url({% block featured_icon %}{% endblock featured_icon %}) no-repeat center bottom;  background-size: 560px 315px; ">
-            <a href="{% block featured_link %}{% endblock featured_link %}"
-               title="{% block featured_tag_title %}{% endblock featured_tag_title %}"
+            <{% if featured_div %}div{% else %}a{% endif %}
+               {% block featured_link %}{% endblock featured_link %}
+               {% block featured_tag_title %}{% endblock featured_tag_title %}
                class="featured-title">
                 <h1>{% block featured_title %}{% endblock featured_title %}</h1>
                 <span class="featured-info">
                     <span><i class="material-icons">label</i> {% block featured_category %}{% endblock featured_category %}</span>
                     <span><i class="material-icons">access_time</i> {% block featured_date %}{% endblock featured_date %}</span>
                 </span>
-            </a>
+            </{% if featured_div %}div{% else %}a{% endif %}>
         </section>
         {% endblock featured_post %}
 
         <!-- Page content -->
-        <div class="page-content {% block full_layout %}{% endblock full_layout %}">
-            {% block content %}{% endblock content %}
+        <div class="wrapper-content">
+            <div class="page-content {% block full_layout %}{% endblock full_layout %}">
+                {% block content %}{% endblock content %}
+            </div>
         </div>
         <!-- End page content -->
 
@@ -150,5 +155,6 @@
 
 
 <script src="/static/app.bundle.js"></script>
+{% block javascript %}{% endblock javascript %}
 </body>
 </html>

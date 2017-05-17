@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% set featured_div = true %}
+
+{% block header %}
+    <style>
+        .post-detail p:first-child:first-letter {
+            color: {{ post.background_color }};
+        }
+    </style>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/solarized-dark.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+{% endblock header %}
+
+{% block title %}{{ post.title }}{% endblock title %}
+{% block metadescription %}{{ post.metadescription }}{% endblock metadescription %}
+
+{% block featured_background_color %}{{ post.background_color }}{% endblock featured_background_color %}
+{% block featured_icon %}{{ post.icon.featured_image.full_size }}{% endblock featured_icon %}
+{% block featured_title %}{{ post.title }}{% endblock featured_title %}
+{% block featured_category %}{{ post.category.name }}{% endblock featured_category %}
+{% block featured_date %}{{ post.created_at | date }}{% endblock featured_date %}
+
+{% block content %}
+    <section class="post-detail">
+
+        <!-- Content -->
+        {{ post.content | safe }}
+        <!-- End content -->
+
+        <!-- Disqus -->
+        <div id="disqus_thread"></div>
+        <script>
+             var disqus_config = function () {
+             this.page.url = '{{ full_url }}';  // Replace PAGE_URL with your page's canonical URL variable
+             this.page.identifier = '{{ post.slug }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+             };
+
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://studio-meteora.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <!-- End disqus -->
+
+        <!-- Author -->
+        <hr />
+
+        <div class="post-author">
+            <img src="https://www.gravatar.com/avatar/{{ author_gravatar }}"
+                 alt="{{ post.author.first_name }} {{ post.author.last_name }}"
+                 title="{{ post.author.first_name }} {{ post.author.last_name }}"/>
+            <p>
+                <span class="post-author-name">{{ post.author.first_name }} {{ post.author.last_name }} - </span>
+                {{ post.author.extra.description }}
+            </p>
+        </div>
+        <!-- End author -->
+
+        <!-- Social -->
+        <div class="share-post" data-margin-top="50">
+            <!-- Share button Facebook -->
+            <a class="share-button facebook"
+               href="https://facebook.com/sharer/sharer.php?u={{ full_url }}"
+               target="_blank" aria-label="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+
+            <!-- Share button Twitter -->
+            <a class="share-button twitter"
+               href="https://twitter.com/intent/tweet/?text={{ post.title }}&url={{ full_url }}"
+               target="_blank" aria-label="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+
+            <!-- Share button Google Plus -->
+            <a class="share-button google-plus"
+               href="https://plus.google.com/share?url={{ full_url }}"
+               target="_blank" aria-label="">
+                <i class="fa fa-google-plus" aria-hidden="true"></i>
+            </a>
+
+            <!-- Share button Email -->
+            <a class="share-button email"
+               href="mailto:?subject={{ post.title }}&body={{ full_url }}"
+               target="_blank" aria-label="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+        </div>
+        <!-- End social -->
+
+    </section>
+{% endblock content %}
+
+{% block javascript %}
+<script>hljs.initHighlightingOnLoad();</script>
+<script id="dsq-count-scr" src="//studio-meteora.disqus.com/count.js" async></script>
+{% endblock javascript %}

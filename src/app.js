@@ -13,8 +13,8 @@ app.use('/static', express.static('dist'));
 app.use('/images', express.static('public/assets/images'));
 
 app.get('/', listPosts);
-app.get('/:slug', detailPost);
+app.get('/:category/:title', detailPost);
 
-app.use((req, res) => res.render('404', { url: req.url }));
+app.use((req, res) => res.render('404'));
 
 app.listen(3000);

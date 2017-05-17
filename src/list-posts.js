@@ -6,8 +6,8 @@ const listPosts = (req, res) => {
     fetch(`${parameters.apiUrl}/blog/?limit=10&offset=0`)
         .then(res => res.json())
         .then(body => {
-
             const results = body.results;
+
             /**
              * Get the featured post
              */
