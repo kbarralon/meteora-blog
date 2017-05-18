@@ -41,7 +41,7 @@
     <meta property="og:title" content="{% block og_title %}Blog de programmation, design, communication et entrepreneuriat{% endblock og_title %}" />
     <meta property="og:type" content="{% block og_type %}website{% endblock og_type %}" />
     <meta property="og:type" content="{% block og_description %}Le blog d'information du studio digital Meteora. Restez à jour sur la programmation, le design, la communication et l'entrepreneuriat.{% endblock og_description %}" />
-    <meta property="og:url" content="{% block og_url %}{{ website }}{% endblock og_url %}" />
+    <meta property="og:url" content="{% block og_url %}{{ full_url }}{% endblock og_url %}" />
     <meta property="og:image" content="{% block og_image %}{{ blog_url }}/images/social/facebook.png{% endblock og_image %}" />
     <!-- End open graph -->
 
@@ -113,8 +113,8 @@
                     <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
                     <h3 class="mdl-mega-footer__heading">Domaines</h3>
                     <ul class="mdl-mega-footer__link-list">
-                        <li><a href="{{ website }}">L'agence Meteora.io</a></li>
-                        <li><a href="/">Le blog Meteora.io</a></li>
+                        <li><a title="Agence de création de sites web et applications, motion design et community management" href="{{ website }}">L'agence Meteora.io</a></li>
+                        <li><a title="Blog de programmation, design, communication et entrepreneuriat" href="/">Le blog Meteora.io</a></li>
                     </ul>
                 </div>
 
@@ -122,10 +122,10 @@
                     <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
                     <h3 class="mdl-mega-footer__heading">Nos services</h3>
                     <ul class="mdl-mega-footer__link-list">
-                        <li><a href="{{ website }}/services/developpement-web-applicatif">Développement web & applicatif</a></li>
-                        <li><a href="{{ website }}/services/identite-visuelle">Identité visuelle</a></li>
-                        <li><a href="{{ website }}/services/animation">Motion design</a></li>
-                        <li><a href="{{ website }}/services/community-management">Community management</a></li>
+                        <li><a title="Création sites web & applications" href="{{ website }}/services/creation-sites-web-applications">Création sites web & applications</a></li>
+                        <li><a title="Identité visuelle, design UX" href="{{ website }}/services/identite-visuelle">Identité visuelle</a></li>
+                        <li><a title="Motion design" href="{{ website }}/services/animation">Motion design</a></li>
+                        <li><a title="Community management" href="{{ website }}/services/community-management">Community management</a></li>
                     </ul>
                 </div>
 
@@ -133,9 +133,9 @@
                     <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
                     <h3 class="mdl-mega-footer__heading">Notre travail</h3>
                     <ul class="mdl-mega-footer__link-list">
-                        <li><a href="{{ website }}/notre-methode">Notre méthode</a></li>
-                        <li><a href="{{ website }}/projets">Nos projets</a></li>
-                        <li><a href="{{ website }}/equipe">L'équipe</a></li>
+                        <li><a title="Méthode de travail" href="{{ website }}/notre-methode">Notre méthode</a></li>
+                        <li><a title="Projets de développement web, motion design et community management" href="{{ website }}/projets">Nos projets</a></li>
+                        <li><a title="L'équipe de Meteora" href="{{ website }}/equipe">L'équipe</a></li>
                     </ul>
                 </div>
 
@@ -143,8 +143,8 @@
                     <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
                     <h3 class="mdl-mega-footer__heading">Liens</h3>
                     <ul class="mdl-mega-footer__link-list">
-                        <li><a href="{{ website }}/contact">Nous contacter</a></li>
-                        <li><a href="{{ website }}/mentions-legales">Mentions légales</a></li>
+                        <li><a title="Contactez l'équipe de Meteora" href="{{ website }}/contact">Nous contacter</a></li>
+                        <li><a title="Mentions légales" href="{{ website }}/mentions-legales">Mentions légales</a></li>
                     </ul>
                 </div>
 

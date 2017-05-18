@@ -35778,8 +35778,9 @@ var _parameters2 = _interopRequireDefault(_parameters);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = (0, _express2.default)();
-
 var NODE_ENV = _parameters2.default.environment;
+
+app.enable('trust proxy');
 
 app.set('views', 'public/templates');
 

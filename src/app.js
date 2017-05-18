@@ -5,8 +5,9 @@ import nunjucksConfig from './settings/nunjucks';
 import parameters from './settings/parameters';
 
 const app = express();
-
 const NODE_ENV = parameters.environment;
+
+app.enable('trust proxy');
 
 app.set('views', 'public/templates');
 
