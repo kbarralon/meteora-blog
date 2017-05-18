@@ -13,7 +13,6 @@ const detailPost = (req, res) => {
             if (body.category.slug !== categorySlug) res.render('404');
             else res.render('post', {
                 post: body,
-                full_url: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
                 author_gravatar: crypto.createHash('md5').update(body.author.email).digest("hex")
             });
         })

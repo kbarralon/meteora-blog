@@ -34729,7 +34729,6 @@ var detailPost = function detailPost(req, res) {
     }).then(function (body) {
         if (body.category.slug !== categorySlug) res.render('404');else res.render('post', {
             post: body,
-            full_url: req.protocol + '://' + req.get('host') + req.originalUrl,
             author_gravatar: _crypto2.default.createHash('md5').update(body.author.email).digest("hex")
         });
     }).catch(function () {
@@ -34808,12 +34807,16 @@ _moment2.default.locale('fr');
 
 function nunjucksConfig(app, env) {
 
+    app.use(function (req, res, next) {
+        res.locals.website = 'https://www.meteora.io';
+        res.locals.blog_url = req.protocol + '://' + req.get('host');
+        res.locals.full_url = req.protocol + '://' + req.get('host') + req.originalUrl;
+        next();
+    });
+
     (0, _expressNunjucks2.default)(app, {
         watch: env !== 'production',
         noCache: env !== 'production',
-        globals: {
-            website: 'https://www.meteora.io'
-        },
         filters: {
             date: function date(value) {
                 var dateNow = new Date();

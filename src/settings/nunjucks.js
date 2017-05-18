@@ -4,12 +4,16 @@ moment.locale('fr');
 
 export default function nunjucksConfig(app, env) {
 
+    app.use((req,res,next) => {
+        res.locals.website = 'https://www.meteora.io';
+        res.locals.blog_url = `${req.protocol}://${req.get('host')}`;
+        res.locals.full_url = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
+        next();
+    });
+
     expressNunjucks(app, {
         watch: env !== 'production',
         noCache: env !== 'production',
-        globals: {
-          website: 'https://www.meteora.io'
-        },
         filters: {
             date: (value) => {
                 const dateNow = new Date();
