@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block featured_background_color %}{{ featured_post.background_color }}{% endblock featured_background_color %}
+{% block featured_background_color %}{{ featured_post.icon.background_color }}{% endblock featured_background_color %}
 {% block featured_icon %}{{ featured_post.icon.featured_image.full_size }}{% endblock featured_icon %}
 {% block featured_link %}href="/{{ featured_post.category.slug }}/{{ featured_post.slug }}"{% endblock featured_link %}
 {% block featured_title %}{{ featured_post.title }}{% endblock featured_title %}
@@ -15,7 +15,7 @@
             <a href="/{{ post.category.slug }}/{{ post.slug }}" class="mdl-card mdl-shadow--2dp item-post">
                 <div class="mdl-card__title mdl-card--expand">
                     <figure>
-                        <img src="{{ post.icon.featured_image.full_size }}" alt="{{ post.title }} title">
+                        <img src="{{ post.icon.featured_image.thumbnail }}" alt="{{ post.title }} title">
                     </figure>
                 </div>
                 <div class="mdl-card__supporting-text">

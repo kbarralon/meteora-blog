@@ -4889,7 +4889,7 @@ var contentDisposition = __webpack_require__(44);
 var contentType = __webpack_require__(224);
 var deprecate = __webpack_require__(9)('express');
 var flatten = __webpack_require__(19);
-var mime = __webpack_require__(39).mime;
+var mime = __webpack_require__(40).mime;
 var basename = __webpack_require__(1).basename;
 var etag = __webpack_require__(47);
 var proxyaddr = __webpack_require__(184);
@@ -5830,7 +5830,7 @@ var objectKeys = Object.keys || function (obj) {
 module.exports = Duplex;
 
 /*<replacement>*/
-var processNextTick = __webpack_require__(38);
+var processNextTick = __webpack_require__(39);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -7477,6 +7477,24 @@ function status (code) {
 
 /***/ }),
 /* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var NODE_ENV = process.env.NODE_ENV || 'development';
+
+var parameters = {
+    environment: NODE_ENV,
+    apiUrl: NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://api.meteora.io'
+};
+exports.default = parameters;
+
+/***/ }),
+/* 30 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -10100,7 +10118,7 @@ module.exports = [
 ];
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10120,7 +10138,7 @@ module.exports = function isPrimitive(value) {
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10196,7 +10214,7 @@ function getBasicNodeMethods() {
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10352,7 +10370,7 @@ module.exports = utils;
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -10618,7 +10636,7 @@ Body.Promise = global.Promise;
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports) {
 
 
@@ -10765,7 +10783,7 @@ Headers.prototype.raw = function() {
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11968,7 +11986,7 @@ module.exports = {
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12008,7 +12026,7 @@ module.exports = Loader;
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12211,7 +12229,7 @@ function patchAssignSocket(res, callback) {
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12261,7 +12279,7 @@ function nextTick(fn, arg1, arg2, arg3) {
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12291,7 +12309,7 @@ var fresh = __webpack_require__(52)
 var fs = __webpack_require__(3)
 var mime = __webpack_require__(298)
 var ms = __webpack_require__(175)
-var onFinished = __webpack_require__(37)
+var onFinished = __webpack_require__(38)
 var parseRange = __webpack_require__(188)
 var path = __webpack_require__(1)
 var statuses = __webpack_require__(28)
@@ -13342,7 +13360,7 @@ function setHeaders (res, headers) {
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports) {
 
 /**
@@ -13371,25 +13389,10 @@ exports = module.exports = function(a, b){
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 module.exports = require("crypto");
-
-/***/ }),
-/* 42 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-var parameters = {
-    apiUrl: 'http://localhost:8000'
-};
-exports.default = parameters;
 
 /***/ }),
 /* 43 */
@@ -14890,7 +14893,7 @@ module.exports = etag
  * @private
  */
 
-var crypto = __webpack_require__(41)
+var crypto = __webpack_require__(42)
 var Stats = __webpack_require__(3).Stats
 
 /**
@@ -15079,8 +15082,8 @@ module.exports = function query(options) {
 
 var Route = __webpack_require__(51);
 var Layer = __webpack_require__(50);
-var methods = __webpack_require__(31);
-var mixin = __webpack_require__(40);
+var methods = __webpack_require__(32);
+var mixin = __webpack_require__(41);
 var debug = __webpack_require__(8)('express:router');
 var deprecate = __webpack_require__(9)('express');
 var flatten = __webpack_require__(19);
@@ -15937,7 +15940,7 @@ function decode_param(val) {
 var debug = __webpack_require__(8)('express:router:route');
 var flatten = __webpack_require__(19);
 var Layer = __webpack_require__(50);
-var methods = __webpack_require__(31);
+var methods = __webpack_require__(32);
 
 /**
  * Module variables.
@@ -28753,9 +28756,9 @@ var https = __webpack_require__(342);
 var zlib = __webpack_require__(346);
 var stream = __webpack_require__(5);
 
-var Body = __webpack_require__(33);
+var Body = __webpack_require__(34);
 var Response = __webpack_require__(308);
-var Headers = __webpack_require__(34);
+var Headers = __webpack_require__(35);
 var Request = __webpack_require__(307);
 var FetchError = __webpack_require__(177);
 
@@ -29061,7 +29064,7 @@ __webpack_require__(7).inherits(FetchError, Error);
 
 var lib = __webpack_require__(4);
 var env = __webpack_require__(179);
-var Loader = __webpack_require__(36);
+var Loader = __webpack_require__(37);
 var loaders = __webpack_require__(181);
 var precompile = __webpack_require__(316);
 
@@ -29074,7 +29077,7 @@ module.exports.FileSystemLoader = loaders.FileSystemLoader;
 module.exports.PrecompiledLoader = loaders.PrecompiledLoader;
 module.exports.WebLoader = loaders.WebLoader;
 
-module.exports.compiler = __webpack_require__(35);
+module.exports.compiler = __webpack_require__(36);
 module.exports.parser = __webpack_require__(182);
 module.exports.lexer = __webpack_require__(180);
 module.exports.runtime = __webpack_require__(26);
@@ -29156,7 +29159,7 @@ var path = __webpack_require__(1);
 var asap = __webpack_require__(210);
 var lib = __webpack_require__(4);
 var Obj = __webpack_require__(11);
-var compiler = __webpack_require__(35);
+var compiler = __webpack_require__(36);
 var builtin_filters = __webpack_require__(311);
 var builtin_loaders = __webpack_require__(181);
 var runtime = __webpack_require__(26);
@@ -31595,7 +31598,7 @@ module.exports = {
 "use strict";
 
 
-var Loader = __webpack_require__(36);
+var Loader = __webpack_require__(37);
 
 var PrecompiledLoader = Loader.extend({
     init: function(compiledTemplates) {
@@ -32356,7 +32359,7 @@ function sortByRangeStart (a, b) {
 module.exports = Readable;
 
 /*<replacement>*/
-var processNextTick = __webpack_require__(38);
+var processNextTick = __webpack_require__(39);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -33489,7 +33492,7 @@ function done(stream, er, data) {
 module.exports = Writable;
 
 /*<replacement>*/
-var processNextTick = __webpack_require__(38);
+var processNextTick = __webpack_require__(39);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -34706,11 +34709,11 @@ var _nodeFetch = __webpack_require__(176);
 
 var _nodeFetch2 = _interopRequireDefault(_nodeFetch);
 
-var _parameters = __webpack_require__(42);
+var _parameters = __webpack_require__(29);
 
 var _parameters2 = _interopRequireDefault(_parameters);
 
-var _crypto = __webpack_require__(41);
+var _crypto = __webpack_require__(42);
 
 var _crypto2 = _interopRequireDefault(_crypto);
 
@@ -34751,7 +34754,7 @@ var _nodeFetch = __webpack_require__(176);
 
 var _nodeFetch2 = _interopRequireDefault(_nodeFetch);
 
-var _parameters = __webpack_require__(42);
+var _parameters = __webpack_require__(29);
 
 var _parameters2 = _interopRequireDefault(_parameters);
 
@@ -34767,12 +34770,13 @@ var listPosts = function listPosts(req, res) {
         locals.featured_post = results[0];
 
         results.shift();
-        var allPosts = results;
-        locals.posts = allPosts.length > 1 ? allPosts : [allPosts];
+        locals.posts = results;
 
         return locals;
     }).then(function (locals) {
         res.render('index', locals);
+    }).catch(function (err) {
+        return console.log(err);
     });
 };
 
@@ -34802,11 +34806,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _moment2.default.locale('fr');
 
-function nunjucksConfig(app) {
+function nunjucksConfig(app, env) {
 
     (0, _expressNunjucks2.default)(app, {
-        watch: true,
-        noCache: true,
+        watch: env !== 'production',
+        noCache: env !== 'production',
         globals: {
             website: 'https://www.meteora.io'
         },
@@ -35581,7 +35585,7 @@ function requestFlush() {
 
 
 
-var isPrimitive = __webpack_require__(30);
+var isPrimitive = __webpack_require__(31);
 var assignSymbols = __webpack_require__(213);
 var typeOf = __webpack_require__(24);
 
@@ -35764,13 +35768,19 @@ var _nunjucks = __webpack_require__(201);
 
 var _nunjucks2 = _interopRequireDefault(_nunjucks);
 
+var _parameters = __webpack_require__(29);
+
+var _parameters2 = _interopRequireDefault(_parameters);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = (0, _express2.default)();
 
+var NODE_ENV = _parameters2.default.environment;
+
 app.set('views', 'public/templates');
 
-(0, _nunjucks2.default)(app);
+(0, _nunjucks2.default)(app, NODE_ENV);
 
 app.use('/static', _express2.default.static('dist'));
 app.use('/images', _express2.default.static('public/assets/images'));
@@ -35782,7 +35792,9 @@ app.use(function (req, res) {
   return res.render('404');
 });
 
-app.listen(3000);
+app.listen(3000, function () {
+  return console.log('App listening on port 3000!');
+});
 
 /***/ }),
 /* 216 */
@@ -38091,7 +38103,7 @@ function ContentType(type) {
  * Module dependencies.
  */
 
-var crypto = __webpack_require__(41);
+var crypto = __webpack_require__(42);
 
 /**
  * Sign the given `val` with `secret`.
@@ -40990,7 +41002,7 @@ webpackEmptyContext.id = 243;
 
 var finalhandler = __webpack_require__(254);
 var Router = __webpack_require__(49);
-var methods = __webpack_require__(31);
+var methods = __webpack_require__(32);
 var middleware = __webpack_require__(246);
 var query = __webpack_require__(48);
 var debug = __webpack_require__(8)('express:application');
@@ -41001,7 +41013,7 @@ var compileQueryParser = __webpack_require__(6).compileQueryParser;
 var compileTrust = __webpack_require__(6).compileTrust;
 var deprecate = __webpack_require__(9)('express');
 var flatten = __webpack_require__(19);
-var merge = __webpack_require__(40);
+var merge = __webpack_require__(41);
 var resolve = __webpack_require__(1).resolve;
 var setPrototypeOf = __webpack_require__(27)
 var slice = Array.prototype.slice;
@@ -42336,16 +42348,16 @@ var encodeUrl = __webpack_require__(21);
 var escapeHtml = __webpack_require__(22);
 var http = __webpack_require__(13);
 var isAbsolute = __webpack_require__(6).isAbsolute;
-var onFinished = __webpack_require__(37);
+var onFinished = __webpack_require__(38);
 var path = __webpack_require__(1);
 var statuses = __webpack_require__(28)
-var merge = __webpack_require__(40);
+var merge = __webpack_require__(41);
 var sign = __webpack_require__(225).sign;
 var normalizeType = __webpack_require__(6).normalizeType;
 var normalizeTypes = __webpack_require__(6).normalizeTypes;
 var setCharset = __webpack_require__(6).setCharset;
 var cookie = __webpack_require__(226);
-var send = __webpack_require__(39);
+var send = __webpack_require__(40);
 var extname = path.extname;
 var mime = send.mime;
 var resolve = path.resolve;
@@ -44234,7 +44246,7 @@ module.exports = function isObject(val) {
 var debug = __webpack_require__(8)('finalhandler')
 var encodeUrl = __webpack_require__(21)
 var escapeHtml = __webpack_require__(22)
-var onFinished = __webpack_require__(37)
+var onFinished = __webpack_require__(38)
 var parseUrl = __webpack_require__(16)
 var statuses = __webpack_require__(28)
 var unpipe = __webpack_require__(336)
@@ -46316,13 +46328,13 @@ module.exports = {
     '936': 'cp936',
     'cp936': {
         type: '_dbcs',
-        table: function() { return __webpack_require__(29) },
+        table: function() { return __webpack_require__(30) },
     },
 
     // GBK (~22000 chars) is an extension of CP936 that added user-mapped chars and some other.
     'gbk': {
         type: '_dbcs',
-        table: function() { return __webpack_require__(29).concat(__webpack_require__(56)) },
+        table: function() { return __webpack_require__(30).concat(__webpack_require__(56)) },
     },
     'xgbk': 'gbk',
     'isoir58': 'gbk',
@@ -46334,7 +46346,7 @@ module.exports = {
     // http://www.khngai.com/chinese/charmap/tblgbk.php?page=0
     'gb18030': {
         type: '_dbcs',
-        table: function() { return __webpack_require__(29).concat(__webpack_require__(56)) },
+        table: function() { return __webpack_require__(30).concat(__webpack_require__(56)) },
         gb18030: function() { return __webpack_require__(273) },
         encodeSkipVals: [0x80],
         encodeAdd: {'€': 0xA2E3},
@@ -53733,7 +53745,7 @@ module.exports = function(str) {
 
 
 
-var isPrimitive = __webpack_require__(30);
+var isPrimitive = __webpack_require__(31);
 
 module.exports = function isEqual(a, b) {
   if (!a && !b) { return true; }
@@ -54175,7 +54187,7 @@ function merge(dest, src, redefine) {
 
 
 var expand = __webpack_require__(294);
-var utils = __webpack_require__(32);
+var utils = __webpack_require__(33);
 
 /**
  * The main function. Pass an array of filepaths,
@@ -54686,7 +54698,7 @@ module.exports = chars;
 
 
 
-var utils = __webpack_require__(32);
+var utils = __webpack_require__(33);
 var Glob = __webpack_require__(295);
 
 /**
@@ -54991,7 +55003,7 @@ function globstar(dotfile) {
 
 
 var chars = __webpack_require__(293);
-var utils = __webpack_require__(32);
+var utils = __webpack_require__(33);
 
 /**
  * Expose `Glob`
@@ -68784,8 +68796,8 @@ function splitParameters(str) {
  */
 
 var parse_url = __webpack_require__(18).parse;
-var Headers = __webpack_require__(34);
-var Body = __webpack_require__(33);
+var Headers = __webpack_require__(35);
+var Body = __webpack_require__(34);
 
 module.exports = Request;
 
@@ -68865,8 +68877,8 @@ Request.prototype.clone = function() {
  */
 
 var http = __webpack_require__(13);
-var Headers = __webpack_require__(34);
-var Body = __webpack_require__(33);
+var Headers = __webpack_require__(35);
+var Body = __webpack_require__(34);
 
 module.exports = Response;
 
@@ -69909,7 +69921,7 @@ module.exports = installCompat;
 var fs = __webpack_require__(3);
 var path = __webpack_require__(1);
 var lib = __webpack_require__(4);
-var Loader = __webpack_require__(36);
+var Loader = __webpack_require__(37);
 var PrecompiledLoader = __webpack_require__(183);
 
 // Node <0.7.1 compatibility
@@ -70032,7 +70044,7 @@ module.exports = precompileGlobal;
 var fs = __webpack_require__(3);
 var path = __webpack_require__(1);
 var lib = __webpack_require__(4);
-var compiler = __webpack_require__(35);
+var compiler = __webpack_require__(36);
 var Environment = __webpack_require__(179).Environment;
 var precompileGlobal = __webpack_require__(315);
 
@@ -71571,7 +71583,7 @@ module.exports = createStreamAPI;
 
 
 
-var isPrimitive = __webpack_require__(30);
+var isPrimitive = __webpack_require__(31);
 var equal = __webpack_require__(286);
 var basic = {};
 var cache = {};
@@ -71753,7 +71765,7 @@ var encodeUrl = __webpack_require__(21)
 var escapeHtml = __webpack_require__(22)
 var parseUrl = __webpack_require__(16)
 var resolve = __webpack_require__(1).resolve
-var send = __webpack_require__(39)
+var send = __webpack_require__(40)
 var url = __webpack_require__(18)
 
 /**

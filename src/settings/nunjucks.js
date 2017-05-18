@@ -2,11 +2,11 @@ import expressNunjucks from 'express-nunjucks';
 import moment from 'moment';
 moment.locale('fr');
 
-export default function nunjucksConfig(app) {
+export default function nunjucksConfig(app, env) {
 
     expressNunjucks(app, {
-        watch: true,
-        noCache: true,
+        watch: env !== 'production',
+        noCache: env !== 'production',
         globals: {
           website: 'https://www.meteora.io'
         },

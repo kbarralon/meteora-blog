@@ -17,14 +17,14 @@ const listPosts = (req, res) => {
              * Get All Posts
              */
             results.shift();
-            const allPosts = results;
-            locals.posts = allPosts.length > 1 ? allPosts : [allPosts];
+            locals.posts = results;
 
             return locals;
         })
         .then(locals => {
             res.render('index', locals)
-        });
+        })
+        .catch(err => console.log(err));
 };
 
 export default listPosts;

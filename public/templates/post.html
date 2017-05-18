@@ -5,7 +5,7 @@
 {% block header %}
     <style>
         .post-detail p:first-child:first-letter {
-            color: {{ post.background_color }};
+            color: {{ post.icon.background_color }};
         }
     </style>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/solarized-dark.min.css">
@@ -15,11 +15,16 @@
 {% block title %}{{ post.title }}{% endblock title %}
 {% block metadescription %}{{ post.metadescription }}{% endblock metadescription %}
 
-{% block featured_background_color %}{{ post.background_color }}{% endblock featured_background_color %}
+{% block featured_background_color %}{{ post.icon.background_color }}{% endblock featured_background_color %}
 {% block featured_icon %}{{ post.icon.featured_image.full_size }}{% endblock featured_icon %}
 {% block featured_title %}{{ post.title }}{% endblock featured_title %}
 {% block featured_category %}{{ post.category.name }}{% endblock featured_category %}
 {% block featured_date %}{{ post.created_at | date }}{% endblock featured_date %}
+{% block og_title %}{{ post.title }}{% endblock og_title %}
+{% block og_type %}article{% endblock og_type %}
+{% block og_description %}{{ post.metadescription }}{% endblock og_description %}
+{% block og_url %}{{ full_url }}{% endblock og_url %}
+{% block og_image %}{{ post.icon.featured_image.full_size }}{% endblock og_image %}
 
 {% block content %}
     <section class="post-detail">
@@ -32,8 +37,8 @@
         <div id="disqus_thread"></div>
         <script>
              var disqus_config = function () {
-             this.page.url = '{{ full_url }}';  // Replace PAGE_URL with your page's canonical URL variable
-             this.page.identifier = '{{ post.slug }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+             this.page.url = '{{ full_url }}';
+             this.page.identifier = '{{ post.slug }}';
              };
 
             (function() { // DON'T EDIT BELOW THIS LINE

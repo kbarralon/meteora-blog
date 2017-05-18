@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="/static/app.bundle.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -35,6 +36,15 @@
     <title>{% block title %}Blog de programmation, design, communication et entrepreneuriat{% endblock title %}</title>
     <meta name="author" content="Meteora.io">
     <meta name="description" content="{% block metadescription %}Le blog d'information du studio digital Meteora. Restez à jour sur la programmation, le design, la communication et l'entrepreneuriat.{% endblock metadescription %}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{% block og_title %}Blog de programmation, design, communication et entrepreneuriat{% endblock og_title %}" />
+    <meta property="og:type" content="{% block og_type %}website{% endblock og_type %}" />
+    <meta property="og:type" content="{% block og_description %}Le blog d'information du studio digital Meteora. Restez à jour sur la programmation, le design, la communication et l'entrepreneuriat.{% endblock og_description %}" />
+    <meta property="og:url" content="{% block og_url %}{{ website }}{% endblock og_url %}" />
+    <meta property="og:image" content="{% block og_image %}/images/social/facebook.png{% endblock og_image %}" />
+    <!-- End open graph -->
+
 </head>
 <body>
 <div class="mdl-layout">
@@ -52,10 +62,14 @@
             </div>
             <!-- End logo -->
 
+            <div class="menu-small" id="menu-small">
+                <i class="material-icons">menu</i>
+            </div>
+
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
-            <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <nav class="mdl-navigation main-nav">
                 <a class="mdl-navigation__link" title="L'agence Meteora" href="{{ website }}">L'agence</a>
                 <a class="mdl-navigation__link" title="Nos services" href="{{ website }}/services">Nos services</a>
                 <a class="mdl-navigation__link" title="Contacter l'équipe" href="{{ website }}/contact">Nous contacter</a>
