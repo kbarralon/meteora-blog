@@ -3,7 +3,7 @@ import parameters from './settings/parameters';
 
 const listPosts = (req, res) => {
     let locals = {};
-    fetch(`${parameters.apiUrl}/blog/?limit=10&offset=0`)
+    fetch(`${parameters.apiUrl}/blog/?published=true&limit=10&offset=0`)
         .then(res => res.json())
         .then(body => {
             const results = body.results;

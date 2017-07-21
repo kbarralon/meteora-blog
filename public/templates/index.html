@@ -4,6 +4,7 @@
 {% block featured_icon %}{{ featured_post.icon.featured_image.full_size }}{% endblock featured_icon %}
 {% block featured_link %}href="/{{ featured_post.category.slug }}/{{ featured_post.slug }}"{% endblock featured_link %}
 {% block featured_title %}{{ featured_post.title }}{% endblock featured_title %}
+{% block featured_title_color %}{{ featured_post.icon.title_color }}{% endblock featured_title_color %}
 {% block featured_tag_title %}title="{{ featured_post.title }}"{% endblock featured_tag_title %}
 {% block featured_category %}{{ featured_post.category.name }}{% endblock featured_category %}
 {% block featured_date %}{{ featured_post.created_at | date }}{% endblock featured_date %}

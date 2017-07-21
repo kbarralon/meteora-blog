@@ -16,7 +16,8 @@ $cta-color: #f7ca44;
     letter-spacing: 1px;
     color: $post-font-color;
 
-    em {
+    u {
+      text-decoration: none;
       font-style: normal;
       background-color: #ececec;
       padding: 2px 4px;
@@ -36,6 +37,7 @@ $cta-color: #f7ca44;
 
   pre {
     margin: 40px 0;
+    white-space: pre-wrap;
   }
 
   hr {
@@ -43,7 +45,7 @@ $cta-color: #f7ca44;
   }
 
   .post-author {
-    padding: 0 0 50px 0;
+    padding: 50px 0 0;
 
     img {
       width: 80px;
@@ -65,7 +67,7 @@ $cta-color: #f7ca44;
   }
 
   #disqus_thread {
-    margin-top: 80px;
+    margin: 80px 0;
   }
 
   .share-post {
@@ -120,7 +122,7 @@ $cta-color: #f7ca44;
     }
 
     .post-author {
-      padding: 0 100px 50px 100px;
+      padding: 50px 100px 0 100px;
     }
 
     .quotation {

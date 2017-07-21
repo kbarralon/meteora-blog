@@ -107,15 +107,17 @@
 // Featured Post
 .featured-post {
   width: 100%;
+  background-size: 280px 157.5px!important;
 
   .featured-title {
     display: block;
-    padding: 3.5em 0 21em;
+    padding: 3.5em 0 10em;
     max-width: $content-width;
     margin: auto;
     text-align: center;
 
     h1 {
+      padding: 0 20px;
       text-align: center;
       color: #ffffff;
       font-size: 2.6em;
@@ -244,6 +246,14 @@
   .item-post {
     display: block;
     width: calc(95% / 2);
+  }
+
+  .featured-post {
+    background-size: 560px 315px!important;
+
+    .featured-title {
+      padding: 3.5em 0 19em;
+    }
   }
 }
 
