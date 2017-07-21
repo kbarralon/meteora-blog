@@ -7,3 +7,4 @@
 * Sass
 * ES6
 * Webpack
+* Docker
